@@ -1,0 +1,21 @@
+var yoloswag = function(a) {
+  var argsCopy = arguments;
+  console.log("This is arguments for yoloswag: ");
+  for(var i = 0; i<arguments.length; i++) {
+    console.log(arguments[i]);
+  }
+  return function(b) {
+    console.log("arguments from the previous invocation are: ");
+    for(var i = 0; i<argsCopy.length; i++) {
+      console.log(argsCopy[i]);
+    }
+
+    console.log("This is arguments for our closure: ");
+    for(var i = 0; i<arguments.length; i++) {
+      console.log(arguments[i]);
+    }
+  };
+};
+
+var foo = yoloswag("A car", "foo bar");
+foo("Not car", "mega foo");
